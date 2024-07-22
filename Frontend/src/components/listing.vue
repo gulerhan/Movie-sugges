@@ -5,7 +5,7 @@
       <v-row class="d-flex" cols="12">
         <v-col>
           <v-select
-            v-model="selectedCategory"
+            v-model="searchModel.categoryId"
             label="Kategori"
             :items="categories"
             item-title="name"
@@ -18,9 +18,7 @@
 
         <v-col xs="4" sm="6" lg="6"
           ><v-text-field
-            v-model="filmName"
-            @keyup="getFilmsByName"
-            @keypress="getFilmsByName"
+            v-model="searchModel.searchText"
             label="Film ara"
           ></v-text-field
         ></v-col>
@@ -34,7 +32,7 @@
         </v-col>
       </v-row>
       <div
-        v-if="!filteredFilms.length"
+        v-if="!filteredMovies.length"
         class="flex flex-row align-center justify-center pt-36"
       >
         <p class="text-xl font-sans text-slate-400">
@@ -57,8 +55,8 @@
           sm="4"
           md="3"
           lg="2"
-          class="relative"
-          v-for="(item, index) in filteredFilms.slice(0, showedFilmCount)"
+          class="position-relative"
+          v-for="(item, index) in filteredMovies.slice(0, showedFilmCount)"
           :key="index"
         >
           <router-link :to="'/film-detail/' + item.point">
@@ -121,7 +119,7 @@
 
       <div
         v-if="
-          filteredFilms.length > 10 && showedFilmCount < filteredFilms.length
+          filteredMovies.length > 10 && showedFilmCount < filteredMovies.length
         "
         class="d-flex flex-row justify-space-around pt-10"
       >
@@ -130,11 +128,12 @@
         >
       </div>
     </div>
-    <FooterVue class="position-fixed" />
+    <FooterVue class="position-relative" />
   </v-app>
 </template>
 
 <script>
+import { toRaw } from "vue";
 import HeaderVue from "./page-header.vue";
 import FooterVue from "./page-footer.vue";
 import axios from "axios";
@@ -151,23 +150,25 @@ export default {
 
   data() {
     return {
-      films: [],
-      filteredFilms: [],
-      filmName: "",
+      movies: [],
+      filteredMovies: [],
+      searchModel: {
+        categoryId: null,
+        searchText: "",
+      },
       sortItems: ["Artan puan", "Azalan puan"],
       sortBy: "",
       showedFilmCount: 10,
       dialog: false,
       deletedFilmIndex: 0,
       categories: [],
-      selectedCategory: "",
     };
   },
   methods: {
     deleteCard() {
-      this.films.splice(this.deletedFilmIndex, 1);
+      /*   this.films.splice(this.deletedFilmIndex, 1);
       this.filteredFilms.slice(this.deletedFilmIndex, 1);
-      localStorage.setItem("films", JSON.stringify(this.films));
+      localStorage.setItem("films", JSON.stringify(this.films)); */
       this.dialog = false;
     },
     sortByAsc(a, b) {
@@ -180,8 +181,8 @@ export default {
       this.$router.push({ path: `/update/${index}` });
     },
     getFilmsByName() {
-      this.filteredFilms = this.films.filter((film) => {
-        return film.name.toLowerCase().includes(this.filmName.toLowerCase());
+      this.filteredMovies = this.movies.filter((film) => {
+        return film.title.toLowerCase().includes(this.filmName.toLowerCase());
       });
     },
     isShowMore() {
@@ -196,8 +197,8 @@ export default {
         .get(`http://localhost:7224/api/Movies/GetAll`)
         .then((res) => {
           console.log("movies res", res);
-          this.films = res.data;
-          this.filteredFilms = res.data;
+          this.movies = res.data;
+          this.filteredMovies = res.data;
         })
         .finally(() => (this.isLoading = false));
     },
@@ -207,7 +208,7 @@ export default {
         .get(`http://localhost:7224/api/Category/GetAll`)
         .then((res) => {
           this.categories = res.data;
-          console.log("get categories", this.categories);
+          console.log("get categories", toRaw(this.categories));
         })
         .finally(() => (this.isLoading = false));
     },
@@ -225,14 +226,14 @@ export default {
   watch: {
     sortBy(newValue) {
       if (newValue == "Artan puan") {
-        this.films.sort(this.sortByAsc);
+        this.movies.sort(this.sortByAsc);
       } else {
-        this.films.sort(this.sortByDesc);
+        this.movies.sort(this.sortByDesc);
       }
     },
     selectedCategory() {
       const result = [];
-      this.films.forEach((movie) => {
+      this.movies.forEach((movie) => {
         console.log("for movies", movie);
         if (movie.categoryId == this.selectedCategory) {
           result.push(movie);
@@ -240,6 +241,23 @@ export default {
       });
       console.log("selectedCategory value", this.selectedCategory);
       console.log("result", result);
+      this.filteredMovies = result;
+    },
+    searchModel: {
+      handler() {
+        this.filteredMovies = this.movies.filter((movie) => {
+          const matchesCategory = this.searchModel.categoryId
+            ? movie.categoryId === this.searchModel.categoryId
+            : true;
+
+          const matchesSearchText = movie.title
+            .toLowerCase()
+            .includes(this.searchModel.searchText.toLowerCase());
+
+          return matchesCategory && matchesSearchText;
+        });
+      },
+      deep: true,
     },
   },
 };
