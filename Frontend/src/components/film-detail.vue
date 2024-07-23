@@ -13,27 +13,9 @@
         <v-col cols="7">
           <v-row>
             <v-col class="my-12">
-              <h1 class="text-xl text-center">Film İsmi</h1>
+              <h1 class="text-xl text-center">{{ movie?.title }}</h1>
               <h3 class="mt-6 px-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                atque unde nobis omnis hic iste quod? Corrupti quia quos hic
-                reiciendis, perspiciatis magnam fugiat ipsum. Molestias amet
-                eius consequatur. Laboriosam. Exercitationem illum, quia
-                consequuntur esse recusandae unde expedita temporibus, corporis
-                cum laudantium earum deleniti numquam culpa. Dignissimos
-                repellat hic laudantium illo eos expedita nisi? Reiciendis
-                itaque exercitationem facilis architecto ipsam. Minima commodi
-                fugiat nemo molestiae molestias ex saepe alias impedit libero
-                officiis hic, earum repudiandae, provident nesciunt pariatur
-                mollitia cumque veniam reprehenderit nobis harum voluptas
-                corporis? In ratione aliquam suscipit. Nulla laudantium minima
-                impedit odio reprehenderit aspernatur amet, vero ad at adipisci
-                tenetur eaque laboriosam placeat magnam architecto et molestiae
-                repellat modi totam iste atque! Qui nobis in cumque molestiae!
-                Molestiae dolor nemo beatae eius non, doloremque impedit libero
-                deserunt esse sint repellendus dolore alias vel ea ipsam sed
-                odio. Ipsa perspiciatis eveniet dolorum mollitia. Est libero
-                aliquid velit illum.
+                {{ movie?.description }}
               </h3>
             </v-col>
           </v-row>
@@ -44,6 +26,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import HeaderVue from "./page-header.vue";
 
 export default {
@@ -51,8 +34,20 @@ export default {
   components: {
     HeaderVue,
   },
+  data: () => ({
+    movieId: null,
+    movie: null,
+  }),
   mounted() {
     console.log(" id", this.$route.params.id);
+    this.movieId = this.$route.params.id;
+    axios
+      .get(`http://localhost:7224/api/Movies/GetDetail/${this.movieId}`)
+      .then((res) => {
+        console.log("Movie Detail", res);
+        this.movie = res.data;
+      })
+      .finally(() => (this.isLoading = false));
   },
 };
 </script>

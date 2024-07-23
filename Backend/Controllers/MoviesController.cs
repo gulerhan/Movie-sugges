@@ -32,6 +32,7 @@ namespace LoginBackend.Controllers
             movie.Poster = movieDTO.Poster;
             movie.Point = movieDTO.Point;
             movie.CategoryId = movieDTO.CategoryId;
+            movie.Description = movieDTO.Description;
 
             dbContext.Movies.Add(movie);
             dbContext.SaveChanges();
@@ -47,5 +48,11 @@ namespace LoginBackend.Controllers
             return Ok(dbContext.Movies.ToList());
         }
 
+        [HttpGet]
+        [Route("GetDetail/{id}")]
+        public IActionResult GetMovie(int id)
+        {
+            return Ok(dbContext.Movies.Where(x=>x.Id==id).FirstOrDefault());
+        }
     }
 }

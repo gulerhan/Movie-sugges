@@ -47,9 +47,12 @@
           <v-col>
             <v-file-input
               md="12"
+              class="file-input"
               label="Film Görseli"
               prepend-icon=""
+              type="file"
               hide-details="false"
+              @change="onFileSelected"
             ></v-file-input>
           </v-col>
 
@@ -74,6 +77,18 @@
               type="number"
               @keypress="isNumber($event)"
             ></v-text-field>
+          </v-col>
+
+          <v-col md="12">
+            <v-textarea
+              v-model="desc"
+              label="Film Açıklaması"
+              row-height="30"
+              rows="4"
+              variant="filled"
+              auto-grow
+              shaped
+            ></v-textarea>
           </v-col>
         </v-form>
 
@@ -110,6 +125,7 @@ export default {
     name: "",
     image: "",
     category: "",
+    desc: "",
     point: 0,
     films: [],
     filmName: "",
@@ -118,6 +134,7 @@ export default {
     model: null,
     search: null,
     categories: [],
+    selectedFile: null,
   }),
   watch: {
     search(val) {
@@ -144,6 +161,9 @@ export default {
   },
 
   methods: {
+    onFileSelected(event) {
+      this.selectedFile = event.target.files[0];
+    },
     getFilmsByName() {
       if (this.filmName.length > 2) {
         fetch(
@@ -152,14 +172,25 @@ export default {
       }
     },
     save() {
+      const formData = new FormData();
+      formData.append("image", this.selectedFile, this.selectedFile.name);
       let film = {
         poster: this.image,
         point: this.point,
         title: this.name,
         categoryId: this.category,
+        description: this.desc,
       };
       axios
-        .post(`http://localhost:7224/api/Movies/Create`, film)
+        .post(`http://localhost:7224/api/Movies/Create`, film, formData, {
+          onUploadProgress: (uploadEvent) => {
+            console.log(
+              "upload progress:" +
+                Math.round((uploadEvent.loaded / uploadEvent.total) * 100) +
+                "%"
+            );
+          },
+        })
         .then((res) => {
           console.log("save film", res);
         })

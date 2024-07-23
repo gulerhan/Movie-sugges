@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\model\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:model\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-21T09:22:46.64Z"
+              "DocumentIndex": 0,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAowCUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T17:24:13.463Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-21T09:22:11.076Z"
+              "Title": "MovieDTO.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Model\\MovieDTO.cs",
+              "RelativeDocumentMoniker": "Model\\MovieDTO.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Model\\MovieDTO.cs",
+              "RelativeToolTip": "Model\\MovieDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T17:23:05.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "DocumentIndex": 1,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Model\\Movie.cs",
+              "RelativeDocumentMoniker": "Model\\Movie.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Model\\Movie.cs",
+              "RelativeToolTip": "Model\\Movie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T09:20:45.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T17:11:31.634Z"
             }
           ]
         }

@@ -36,6 +36,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LoginBackend.Controllers.MoviesController",
+    "Method": "GetMovie",
+    "RelativePath": "api/Movies/GetDetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LoginBackend.Controllers.UsersController",
     "Method": "GetUser",
     "RelativePath": "api/Users/GetUser",

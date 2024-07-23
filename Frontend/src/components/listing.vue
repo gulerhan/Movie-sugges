@@ -59,7 +59,7 @@
           v-for="(item, index) in filteredMovies.slice(0, showedFilmCount)"
           :key="index"
         >
-          <router-link :to="'/film-detail/' + item.point">
+          <router-link :to="'/film-detail/' + item.id">
             <v-hover v-slot="{ isHovering, props }">
               <v-card
                 :elevation="isHovering ? 12 : 2"
