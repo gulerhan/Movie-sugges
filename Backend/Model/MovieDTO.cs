@@ -2,7 +2,7 @@
 {
     public class MovieDTO
     {
-        public string Poster { get; set; }
+        public IFormFile Poster { get; set; }
         public string Title { get; set; }
 
         public int Point { get; set; }

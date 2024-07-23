@@ -6,7 +6,7 @@
         <v-col cols="5">
           <v-card class="m-12" max-width="480">
             <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              :src="'http://localhost:7224/Upload/MovieImages/' + movie?.poster"
             ></v-img>
           </v-card>
         </v-col>

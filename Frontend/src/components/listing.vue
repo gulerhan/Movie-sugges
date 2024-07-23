@@ -100,16 +100,18 @@
                   >
                     {{ item.point }}
                   </h1>
-                  <h1
+                  <!-- <h1
                     class="text-yellow pt-12 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl"
                   >
                     {{ item.category }}
-                  </h1>
+                  </h1> -->
                 </div>
                 <img
                   alt="Placeholder"
                   class="block h-80 w-full object-cover"
-                  :src="item.poster"
+                  :src="
+                    'http://localhost:7224/Upload/MovieImages/' + item.poster
+                  "
                 />
               </v-card>
             </v-hover>

@@ -123,7 +123,6 @@ export default {
     snackbar: false,
     text: `Kaydedildi`,
     name: "",
-    image: "",
     category: "",
     desc: "",
     point: 0,
@@ -162,35 +161,33 @@ export default {
 
   methods: {
     onFileSelected(event) {
+      console.log("file event", event);
       this.selectedFile = event.target.files[0];
     },
-    getFilmsByName() {
-      if (this.filmName.length > 2) {
-        fetch(
-          `http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&t=${this.filmName}`
-        ).then((response) => response.json());
-      }
-    },
+    // getFilmsByName() {
+    //   if (this.filmName.length > 2) {
+    //     fetch(
+    //       `http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&t=${this.filmName}`
+    //     ).then((response) => response.json());
+    //   }
+    // },
     save() {
       const formData = new FormData();
-      formData.append("image", this.selectedFile, this.selectedFile.name);
-      let film = {
-        poster: this.image,
-        point: this.point,
-        title: this.name,
-        categoryId: this.category,
-        description: this.desc,
-      };
+      formData.append("poster", this.selectedFile, this.selectedFile.name);
+      formData.append("point", this.point);
+      formData.append("title", this.name);
+      formData.append("categoryId", this.category);
+      formData.append("description", this.desc);
+
+      // let film = {
+      //   poster: this.selectedFile,
+      //   point: this.point,
+      //   title: this.name,
+      //   categoryId: this.category,
+      //   description: this.desc,
+      // };
       axios
-        .post(`http://localhost:7224/api/Movies/Create`, film, formData, {
-          onUploadProgress: (uploadEvent) => {
-            console.log(
-              "upload progress:" +
-                Math.round((uploadEvent.loaded / uploadEvent.total) * 100) +
-                "%"
-            );
-          },
-        })
+        .post(`http://localhost:7224/api/Movies/Create`, formData)
         .then((res) => {
           console.log("save film", res);
         })
