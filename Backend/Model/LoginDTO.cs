@@ -1,4 +1,4 @@
-﻿namespace LoginBackend.Model
+﻿namespace MovieSugges.Model
 {
     public class LoginDTO
     {

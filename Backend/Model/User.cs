@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace LoginBackend.Model
+namespace MovieSugges.Model
 {
     public class User
     {
@@ -14,5 +14,5 @@ namespace LoginBackend.Model
         public DateTime CreatedOn { get; set; } = DateTime.Now;
     }
 
- 
+
 }

@@ -1,4 +1,4 @@
-﻿namespace LoginBackend.Model
+﻿namespace MovieSugges.Model
 {
     public class MovieDTO
     {
@@ -10,5 +10,6 @@
         public int CategoryId { get; set; }
 
         public string Description { get; set; }
+
     }
 }

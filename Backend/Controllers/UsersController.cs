@@ -1,11 +1,11 @@
-﻿using LoginBackend.Model;
+﻿using MovieSugges.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace LoginBackend.Controllers
+namespace MovieSugges.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,18 +27,18 @@ namespace LoginBackend.Controllers
             }
 
             var objUser = dbContext.Users.FirstOrDefault(x => x.Email == userDTO.Email);
-            if(objUser == null)
+            if (objUser == null)
             {
 
-            dbContext.Users.Add(new User
-            {
-                FirstName = userDTO.FirstName,
-                LastName = userDTO.LastName,
-                Email = userDTO.Email,
-                Password = userDTO.Password,
-            });
-            dbContext.SaveChanges();
-            return Ok("User registered successfully");
+                dbContext.Users.Add(new User
+                {
+                    FirstName = userDTO.FirstName,
+                    LastName = userDTO.LastName,
+                    Email = userDTO.Email,
+                    Password = userDTO.Password,
+                });
+                dbContext.SaveChanges();
+                return Ok("User registered successfully");
             }
             else
             {
@@ -74,8 +74,8 @@ namespace LoginBackend.Controllers
             if (user != null)
                 return Ok();
             else
-                return NoContent();          
+                return NoContent();
         }
     }
- 
+
 }

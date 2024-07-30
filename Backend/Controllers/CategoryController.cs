@@ -1,8 +1,8 @@
-﻿using LoginBackend.Model;
+﻿using MovieSugges.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace LoginBackend.Controllers
+namespace MovieSugges.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

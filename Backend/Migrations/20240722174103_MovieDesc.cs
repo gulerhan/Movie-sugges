@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LoginBackend.Migrations
+namespace MovieSugges.Migrations
 {
     /// <inheritdoc />
     public partial class MovieDesc : Migration

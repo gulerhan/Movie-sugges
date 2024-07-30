@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LoginBackend.Migrations
+namespace MovieSugges.Migrations
 {
     [DbContext(typeof(MyDbContext))]
     [Migration("20240716182210_Categories")]
@@ -24,7 +24,7 @@ namespace LoginBackend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("LoginBackend.Model.Movie", b =>
+            modelBuilder.Entity("MovieSugges.Model.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace LoginBackend.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("LoginBackend.Model.User", b =>
+            modelBuilder.Entity("MovieSugges.Model.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()

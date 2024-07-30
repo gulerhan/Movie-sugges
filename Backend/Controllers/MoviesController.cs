@@ -1,10 +1,10 @@
-﻿using LoginBackend.Model;
+﻿using MovieSugges.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 
-namespace LoginBackend.Controllers
+namespace MovieSugges.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -29,7 +29,6 @@ namespace LoginBackend.Controllers
             var movie = new Movie();
 
             movie.Title = movieDTO.Title;
-            //movie.Poster = movieDTO.Poster;
             movie.Point = movieDTO.Point;
             movie.CategoryId = movieDTO.CategoryId;
             movie.Description = movieDTO.Description;
@@ -62,12 +61,66 @@ namespace LoginBackend.Controllers
 
         [HttpGet]
         [Route("GetDetail/{id}")]
-        public IActionResult GetMovie(int id)
+        public async Task<IActionResult> GetMovie(int id)
         {
-            return Ok(dbContext.Movies.Where(x=>x.Id==id).FirstOrDefault());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Linq nedir? Linq'nun kullanımı ve fonksiyonları. Aşağıda kullandığın fonksiyonlar nedir ne işe yarar?
+            var movie = await dbContext.Movies
+                    .Include(m => m.Comments)
+                        .ThenInclude(c => c.User)
+                    .Include(m => m.Category)
+                    .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            var response = new MovieDetailResponse
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Description = movie.Description,
+                Poster = movie.Poster,
+                CategoryName = movie.Category.Name,
+                Comments = movie.Comments.Select(c => new CommentResponse
+                {
+                    Id = c.Id,
+                    Content = c.Content,
+                    UserName = c.User.FirstName + " " + c.User.LastName,
+                }).ToList()
+            };
+
+            return Ok(response);
         }
 
+        [HttpPost]
+        [Route("Comment")]
 
+        public async Task<IActionResult> AddComment(CommentDTO commentDto)
+        {
+            var movie = await dbContext.Movies.FindAsync(commentDto.MovieId);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            var comment = new Comment
+            {
+                Content = commentDto.Content,
+                MovieId = commentDto.MovieId,
+                UserId = commentDto.UserId,
+                CreatedAt = DateTime.UtcNow,
+            };
+
+            dbContext.Comments.Add(comment);
+            await dbContext.SaveChangesAsync();
+            return Ok("Comment created successfully");
+        }
 
 
         //if (p.Image != null)
