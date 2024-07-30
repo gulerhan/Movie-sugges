@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MovieSugges.Model
+namespace MovieSugges.MovieSugges.BL.Model
 {
     public class Movie
     {

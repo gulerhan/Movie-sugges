@@ -1,6 +1,6 @@
-﻿using MovieSugges.Model;
+﻿using MovieSugges.MovieSugges.BL.Model;
 using Microsoft.EntityFrameworkCore;
-using static MovieSugges.Model.Comment;
+using static MovieSugges.MovieSugges.BL.Model.Comment;
 
 public class MyDbContext : DbContext
 {
@@ -13,6 +13,8 @@ public class MyDbContext : DbContext
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Comment> Comments { get; set; }
+    public DbSet<UserRole> Roles { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

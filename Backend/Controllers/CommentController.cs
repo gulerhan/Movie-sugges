@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieSugges.Migrations;
-using MovieSugges.Model;
+using MovieSugges.MovieSugges.BL.Model;
 
 namespace MovieSugges.Controllers
 {

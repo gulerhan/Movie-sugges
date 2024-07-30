@@ -1,9 +1,10 @@
-﻿using MovieSugges.Model;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Options;
+using MovieSugges.MovieSugges.BL.Model;
 
 namespace MovieSugges.Controllers
 {
@@ -12,10 +13,21 @@ namespace MovieSugges.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MyDbContext dbContext;
-        public UsersController(MyDbContext dbContext)
+        //private readonly JwtTokenGenerator _jwtTokenGenerator;
+
+        private readonly List<User> _users = new List<User>
+        {
+            new User { Email = "admin", Password = "admin123", Role = "Admin" },
+            new User { Email = "user", Password = "user123", Role = "User" }
+        };
+
+        public UsersController(MyDbContext dbContext, IOptions<JwtSettings> jwtSettings)
         {
             this.dbContext = dbContext;
+
+            //_jwtTokenGenerator = new JwtTokenGenerator(jwtSettings.Value);
         }
+
         [HttpPost]
         [Route("Registration")]
 
@@ -50,6 +62,10 @@ namespace MovieSugges.Controllers
         public IActionResult Login(LoginDTO loginDTO)
         {
             var user = dbContext.Users.FirstOrDefault(x => x.Email == loginDTO.Email && x.Password == loginDTO.Password);
+            
+            //var token = _jwtTokenGenerator.GenerateToken(user);
+
+            //user.BearerToken = token;
 
             if (user != null)
             {

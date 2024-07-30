@@ -273,3 +273,4 @@ C:\Users\burha\OneDrive\Masaüstü\Movie-sugges\Backend\obj\Debug\net8.0\refint\
 C:\Users\burha\OneDrive\Masaüstü\Movie-sugges\Backend\obj\Debug\net8.0\MovieSugges.pdb
 C:\Users\burha\OneDrive\Masaüstü\Movie-sugges\Backend\obj\Debug\net8.0\MovieSugges.genruntimeconfig.cache
 C:\Users\burha\OneDrive\Masaüstü\Movie-sugges\Backend\obj\Debug\net8.0\ref\MovieSugges.dll
+C:\Users\burha\OneDrive\Masaüstü\Movie-sugges\Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

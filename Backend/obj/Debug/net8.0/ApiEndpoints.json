@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "MovieSugges.MovieSugges.BL.Model.AdminController",
+    "Method": "Manage",
+    "RelativePath": "api/Admin/manage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieSugges.Controllers.CategoryController",
     "Method": "GetCategories",
     "RelativePath": "api/Category/GetAll",
@@ -19,7 +29,7 @@
     "Parameters": [
       {
         "Name": "commentDTO",
-        "Type": "MovieSugges.Model.CommentDTO",
+        "Type": "MovieSugges.MovieSugges.BL.Model.CommentDTO",
         "IsRequired": true
       }
     ],
@@ -51,7 +61,7 @@
     "Parameters": [
       {
         "Name": "commentDto",
-        "Type": "MovieSugges.Model.CommentDTO",
+        "Type": "MovieSugges.MovieSugges.BL.Model.CommentDTO",
         "IsRequired": true
       }
     ],
@@ -155,7 +165,7 @@
     "Parameters": [
       {
         "Name": "loginDTO",
-        "Type": "MovieSugges.Model.LoginDTO",
+        "Type": "MovieSugges.MovieSugges.BL.Model.LoginDTO",
         "IsRequired": true
       }
     ],
@@ -171,7 +181,7 @@
     "Parameters": [
       {
         "Name": "userDTO",
-        "Type": "MovieSugges.Model.UserDTO",
+        "Type": "MovieSugges.MovieSugges.BL.Model.UserDTO",
         "IsRequired": true
       }
     ],

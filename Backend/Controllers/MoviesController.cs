@@ -1,8 +1,8 @@
-﻿using MovieSugges.Model;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using MovieSugges.MovieSugges.BL.Model;
 
 namespace MovieSugges.Controllers
 {

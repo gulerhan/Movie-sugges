@@ -1,4 +1,4 @@
-﻿namespace MovieSugges.Model
+﻿namespace MovieSugges.MovieSugges.BL.Model
 {
     public class Category
     {
