@@ -34,7 +34,6 @@ export default {
     return {
       user: {
         email: "",
-        password: "",
       },
       desserts: [
         {
@@ -101,9 +100,9 @@ export default {
       }
     },
   },
-  mounted() {
-    this.fetchUser();
-  },
+  // mounted() {
+  //   this.fetchUser();
+  // },
 };
 </script>
 

@@ -5,13 +5,13 @@
     </video>
     <div>
       <div class="container my-12 mx-auto px-4 md:px-12">
-        <div class="d-flex flex-col items-center pt-8">
-          <v-form v-model="valid" class="w-1/4">
+        <div class="d-flex flex-col items-center pt-12">
+          <v-form v-model="valid" class="w-3/4 sm:w-1/4">
             <v-col class="d-flex flex-col items-center mb-10">
               <p class="text-4xl font-sans text-white">Giriş Yap</p>
             </v-col>
 
-            <v-col md="12" class="position-relative">
+            <v-col class="position-relative">
               <v-text-field
                 v-model="email"
                 label="Email"
@@ -20,7 +20,7 @@
                 class="text-white"
               ></v-text-field>
             </v-col>
-            <v-col md="12" class="position-relative">
+            <v-col class="position-relative">
               <v-text-field
                 v-model="password"
                 label="Şifre"
@@ -48,24 +48,25 @@
               </v-icon>
             </v-col>
           </v-form>
-          <v-btn
-            elevation="2"
-            color="yellow lighten-1 mt-4"
-            @click="login"
-            class="mt-12"
-            style="width: 23%"
-          >
-            Giriş
-          </v-btn>
-          <v-btn
-            elevation="2"
-            color="light-blue-accent-4 mt-6"
-            style="width: 23%"
-            class="mt-6"
-            @click="register"
-          >
-            Kayıt Ol
-          </v-btn>
+          <div class="d-flex flex-col align-items-center w-3/4 sm:w-1/4">
+            <v-btn
+              elevation="2"
+              color="yellow lighten-1 mt-4"
+              @click="login"
+              class="mt-12"
+            >
+              Giriş
+            </v-btn>
+            <v-btn
+              elevation="2"
+              color="light-blue-accent-4 mt-6"
+              aria-colspan=""
+              class="mt-6"
+              @click="register"
+            >
+              Kayıt Ol
+            </v-btn>
+          </div>
         </div>
       </div>
       <v-snackbar v-model="isShowSnackbar" color="red" elevation="24">
@@ -123,6 +124,7 @@ export default {
           const user = {
             name: res.firstName + " " + res.lastName,
             email: res.email,
+            userId: res.userId,
             token: res.token,
           };
           console.log("login res", res);

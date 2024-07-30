@@ -29,7 +29,7 @@
         </v-col>
       </v-row> -->
       <div class="d-flex flex-col items-center">
-        <v-form v-model="valid" class="w-1/4">
+        <v-form v-model="valid" class="sm:w-1/4 md:w-1/4">
           <v-col class="d-flex flex-col items-center mb-10">
             <p class="text-4xl font-sans">Film Ekle</p>
           </v-col>
@@ -70,12 +70,18 @@
           <v-col md="12">
             <v-text-field
               v-model="point"
-              :rules="point"
+              :rules="[
+                (v) => !!v || 'Film Puanı gerekli',
+                (v) => (v >= 0 && v <= 9) || 'Puan 0 ile 9 arasında olmalı',
+              ]"
               label="Film Puanı"
               required
               hide-details="false"
               type="number"
+              min="0"
+              max="9"
               @keypress="isNumber($event)"
+              @blur="limitInput"
             ></v-text-field>
           </v-col>
 
@@ -142,15 +148,14 @@ export default {
 
       this.isLoading = true;
       this.films = [];
-      const _this = this;
-      axios
-        .get(`http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&s=${val}`)
-        .then((res) => {
-          res.data.Search.forEach((element) => {
-            _this.films.push(element);
-          });
-        })
-        .finally(() => (this.isLoading = false));
+      // axios
+      //   .get(`http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&s=${val}`)
+      //   .then((res) => {
+      //     res.data.Search.forEach((element) => {
+      //       _this.films.push(element);
+      //     });
+      //   })
+      //   .finally(() => (this.isLoading = false));
     },
     model(val) {
       this.name = val.Title;
@@ -160,6 +165,18 @@ export default {
   },
 
   methods: {
+    limitInput(event) {
+      const value = parseFloat(event.target.value);
+      if (value > 9) {
+        this.point = 9;
+        event.target.value = 9;
+      } else if (value < 0) {
+        this.point = 0;
+        event.target.value = 0;
+      } else {
+        this.point = value;
+      }
+    },
     onFileSelected(event) {
       console.log("file event", event);
       this.selectedFile = event.target.files[0];
@@ -179,13 +196,6 @@ export default {
       formData.append("categoryId", this.category);
       formData.append("description", this.desc);
 
-      // let film = {
-      //   poster: this.selectedFile,
-      //   point: this.point,
-      //   title: this.name,
-      //   categoryId: this.category,
-      //   description: this.desc,
-      // };
       axios
         .post(`http://localhost:7224/api/Movies/Create`, formData)
         .then((res) => {
@@ -193,6 +203,16 @@ export default {
         })
         .finally(() => (this.isLoading = false));
       this.snackbar = true;
+
+      // if (
+      //   this.selectedFile.length == 0 ||
+      //   this.point.length == 0 ||
+      //   this.name.length == 0 ||
+      //   this.category.length == 0 ||
+      //   this.desc.length == 0
+      // ) {
+      //   console.log("kaydedilmedi");
+      // }
     },
 
     isNumber(evt) {

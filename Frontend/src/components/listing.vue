@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <HeaderVue />
-    <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="container my-12 mx-auto px-4">
       <v-row class="d-flex" cols="12">
         <v-col>
           <v-select
@@ -91,7 +91,7 @@
                 >
                   <h1
                     class="text-lg md:text-xl lg:text-xl xl:text-2xl"
-                    style="color: black"
+                    style="color: white"
                   >
                     {{ item.title }}
                   </h1>

@@ -6,7 +6,7 @@
     <div>
       <div class="container my-12 mx-auto px-4 md:px-12">
         <div class="d-flex flex-col items-center">
-          <v-form v-model="valid" class="w-1/4">
+          <v-form v-model="valid" class="w-3/4 sm:w-1/4">
             <v-col class="d-flex flex-col items-center mb-10">
               <p class="text-4xl font-sans text-white">Kayıt Ol</p>
             </v-col>
@@ -67,20 +67,17 @@
               </v-icon>
             </v-col>
           </v-form>
-          <v-btn
-            elevation="2"
-            color="light-blue-accent-3 mt-4"
-            style="width: 23%"
-            @click="register"
-            >Kayıt Ol</v-btn
-          >
-          <v-btn
-            elevation="2"
-            color="yellow lighten-1 mt-4"
-            @click="login"
-            style="width: 23%"
-            >Geri dön</v-btn
-          >
+          <div class="d-flex flex-col align-items-center w-3/4 sm:w-1/4">
+            <v-btn
+              elevation="2"
+              color="light-blue-accent-3 mt-4"
+              @click="register"
+              >Kayıt Ol</v-btn
+            >
+            <v-btn elevation="2" color="yellow lighten-1 mt-4" @click="login"
+              >Geri dön</v-btn
+            >
+          </div>
         </div>
       </div>
       <v-snackbar
