@@ -12,11 +12,9 @@ namespace MovieSugges.MovieSugges.BL.Model
         public string Password { get; set; }
         public int IsActive { get; set; } = 1;
         public int RoleId { get; set; }
-        public string Role { get; set; }
+        public UserRole Role { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.Now;
 
-        [NotMapped]
-        public string BearerToken { get; set; }
     }
 
 

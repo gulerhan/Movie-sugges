@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MovieSugges.MovieSugges.BL.Model
+namespace MovieSugges.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -46,7 +46,6 @@ namespace MovieSugges.Controllers
             await dbContext.SaveChangesAsync();
             return Ok("Movie created successfully");
 
-
         }
 
 
@@ -122,17 +121,19 @@ namespace MovieSugges.Controllers
             return Ok("Comment created successfully");
         }
 
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMovie(int id)
+        {
+            var movie = await dbContext.Movies.FindAsync(id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
 
-        //if (p.Image != null)
-        //    {
-        // var resource = Directory.GetCurrentDirectory();
-        //var extension = Path.GetExtension(p.Image.FileName);
-        //var imagename = Guid.NewGuid() + extension;
-        //var savelocation = resource + "/wwwroot/userimages/" + imagename;
-        //var stream = new FileStream(savelocation, FileMode.Create);
+            dbContext.Movies.Remove(movie);
+            await dbContext.SaveChangesAsync();
 
-        //await p.Image.CopyToAsync(stream);
-        //user.ImageUrl = imagename;
-        //    }
+            return Ok("Movie deleted successfully");
+        }
     }
 }

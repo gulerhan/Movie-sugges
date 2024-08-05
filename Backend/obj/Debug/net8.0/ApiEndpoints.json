@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "MovieSugges.MovieSugges.BL.Model.AdminController",
+    "ContainingType": "MovieSugges.Controllers.AdminController",
     "Method": "Manage",
     "RelativePath": "api/Admin/manage",
     "HttpMethod": "GET",
@@ -45,6 +45,22 @@
     "Parameters": [
       {
         "Name": "movieid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieSugges.Controllers.MoviesController",
+    "Method": "DeleteMovie",
+    "RelativePath": "api/Movies/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }

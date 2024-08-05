@@ -6,7 +6,6 @@ namespace MovieSugges.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
     public class CategoryController : ControllerBase
     {
         private readonly MyDbContext dbContext;

@@ -126,6 +126,7 @@ export default {
             email: res.email,
             userId: res.userId,
             token: res.token,
+            isAdmin: res.roleId == 1 ? true : false,
           };
           console.log("login res", res);
           localStorage.setItem("user", JSON.stringify(user));

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MovieSugges.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240730191706_UseAndRole")]
-    partial class UseAndRole
+    [Migration("20240801113803_UserToRole")]
+    partial class UserToRole
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace MovieSugges.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MovieSugges.Model.Category", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,7 +41,7 @@ namespace MovieSugges.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Comment", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace MovieSugges.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Movie", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +104,7 @@ namespace MovieSugges.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.User", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -134,19 +134,17 @@ namespace MovieSugges.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("RoleId");
+
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.UserRole", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.UserRole", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -163,15 +161,15 @@ namespace MovieSugges.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Comment", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Comment", b =>
                 {
-                    b.HasOne("MovieSugges.Model.Movie", "Movie")
+                    b.HasOne("MovieSugges.MovieSugges.BL.Model.Movie", "Movie")
                         .WithMany("Comments")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MovieSugges.Model.User", "User")
+                    b.HasOne("MovieSugges.MovieSugges.BL.Model.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -182,9 +180,9 @@ namespace MovieSugges.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Movie", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Movie", b =>
                 {
-                    b.HasOne("MovieSugges.Model.Category", "Category")
+                    b.HasOne("MovieSugges.MovieSugges.BL.Model.Category", "Category")
                         .WithMany("Movies")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -193,14 +191,30 @@ namespace MovieSugges.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Category", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.User", b =>
+                {
+                    b.HasOne("MovieSugges.MovieSugges.BL.Model.UserRole", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Category", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("MovieSugges.Model.Movie", b =>
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.Movie", b =>
                 {
                     b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("MovieSugges.MovieSugges.BL.Model.UserRole", b =>
+                {
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

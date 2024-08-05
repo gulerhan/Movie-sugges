@@ -41,14 +41,16 @@
       </div>
       <v-dialog v-model="dialog">
         <v-card class="flex w-80 mx-auto">
-          <v-card-text> Silinsin mi ? </v-card-text>
+          <v-card-text> {{ deletedFilm?.title }} silinsin mi ?</v-card-text>
           <v-card-actions>
-            <v-btn color="red" @click="deleteCard()" class="ml-auto mr-0"
+            <v-btn color="red" @click="deleteMovie()" class="ml-auto mr-0"
               >Sil</v-btn
             >
+            <v-btn @click="dialog = false"> İptal </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
+
       <v-row>
         <v-col
           cols="6"
@@ -58,64 +60,61 @@
           class="position-relative"
           v-for="(item, index) in filteredMovies.slice(0, showedFilmCount)"
           :key="index"
+          @click="handleDetail(item)"
         >
-          <router-link :to="'/film-detail/' + item.id">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-card
-                :elevation="isHovering ? 12 : 2"
-                :class="{ 'on-hover': isHovering }"
-                class="flex flex-wrap cursor-pointer"
-                v-bind="props"
-              >
-                <!-- <div class="d-flex">
+          <v-hover v-slot="{ isHovering, props }">
+            <v-card
+              :elevation="isHovering ? 12 : 2"
+              :class="{ 'on-hover': isHovering }"
+              class="flex flex-wrap cursor-pointer"
+              v-bind="props"
+            >
+              <div class="d-flex" v-if="this.user?.isAdmin">
                 <button
                   v-if="isHovering"
-                  @click="openDeleteModal(index)"
+                  @click.stop.prevent="openDeleteModal($event, item)"
                   color="primary"
                   class="absolute z-10 w-7 bg-red-500 rounded-full font-sans absolute right-1 top-1 p-1 text-white text-sm md:text-xs"
                 >
                   Sil
                 </button>
-                <button
-                  v-if="isHovering"
-                  @click="update(index)"
-                  class="absolute z-10 bg-yellow-500 rounded-full font-sans absolute p-1 right-10 top-1 text-white text-sm md:text-xs"
-                >
-                  Güncelle
-                </button>
-              </div> -->
+                <!-- <button
+                    v-if="isHovering"
+                    @click="update(index)"
+                    class="absolute z-10 bg-yellow-500 rounded-full font-sans absolute p-1 right-10 top-1 text-white text-sm md:text-xs"
+                  >
+                    Güncelle
+                  </button> -->
+              </div>
 
-                <div
-                  v-if="isHovering"
-                  class="absolute text-center d-flex flex-column left-0 right-0 top-32 text-white font-bold xl:top-32"
+              <div
+                v-if="isHovering"
+                class="absolute text-center d-flex flex-column left-0 right-0 top-32 text-white font-bold xl:top-32"
+              >
+                <h1
+                  class="text-lg md:text-xl lg:text-xl xl:text-2xl"
+                  style="color: white"
                 >
-                  <h1
-                    class="text-lg md:text-xl lg:text-xl xl:text-2xl"
-                    style="color: white"
-                  >
-                    {{ item.title }}
-                  </h1>
-                  <h1
-                    class="text-yellow pt-12 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl"
-                  >
-                    {{ item.point }}
-                  </h1>
-                  <!-- <h1
+                  {{ item.title }}
+                </h1>
+                <h1
+                  class="text-yellow pt-12 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl"
+                >
+                  {{ item.point }}
+                </h1>
+                <!-- <h1
                     class="text-yellow pt-12 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl"
                   >
                     {{ item.category }}
                   </h1> -->
-                </div>
-                <img
-                  alt="Placeholder"
-                  class="block h-80 w-full object-cover"
-                  :src="
-                    'http://localhost:7224/Upload/MovieImages/' + item.poster
-                  "
-                />
-              </v-card>
-            </v-hover>
-          </router-link>
+              </div>
+              <img
+                alt="Placeholder"
+                class="block h-80 w-full object-cover"
+                :src="'http://localhost:7224/Upload/MovieImages/' + item.poster"
+              />
+            </v-card>
+          </v-hover>
         </v-col>
       </v-row>
 
@@ -123,7 +122,7 @@
         v-if="
           filteredMovies.length > 10 && showedFilmCount < filteredMovies.length
         "
-        class="d-flex flex-row justify-space-around pt-10"
+        class="d-flex flex-row justify-space-around p-20"
       >
         <v-btn elevation="2" color="yellow lighten-1" @click="isShowMore()"
           >Devamını göster</v-btn
@@ -149,10 +148,10 @@ export default {
     HeaderVue,
     FooterVue,
   },
-
   data() {
     return {
       movies: [],
+      user: null,
       filteredMovies: [],
       searchModel: {
         categoryId: null,
@@ -167,10 +166,18 @@ export default {
     };
   },
   methods: {
-    deleteCard() {
-      /*   this.films.splice(this.deletedFilmIndex, 1);
-      this.filteredFilms.slice(this.deletedFilmIndex, 1);
-      localStorage.setItem("films", JSON.stringify(this.films)); */
+    handleDetail(item) {
+      this.$router.push({ path: `/film-detail/${item.id}` });
+    },
+    deleteMovie() {
+      console.log("deleteCard deleted", this.deletedFilm);
+      axios
+        .delete(`http://localhost:7224/api/Movies/${this.deletedFilm.id}`)
+        .then((res) => {
+          console.log("movie deleted res", res);
+          this.getMovies();
+        })
+        .finally(() => (this.isLoading = false));
       this.dialog = false;
     },
     sortByAsc(a, b) {
@@ -190,9 +197,11 @@ export default {
     isShowMore() {
       this.showedFilmCount += 10;
     },
-    openDeleteModal(index) {
+    openDeleteModal(event, item) {
+      console.log("openDeleteModal deleted", item);
+
       this.dialog = true;
-      this.deletedFilmIndex = index;
+      this.deletedFilm = item;
     },
     getMovies() {
       axios
@@ -215,13 +224,12 @@ export default {
         .finally(() => (this.isLoading = false));
     },
   },
-  beforeCreate() {
-    const user = localStorage.getItem("user");
-    if (user == null) {
+  mounted() {
+    this.user = JSON.parse(localStorage.getItem("user"));
+    console.log("user", this.user);
+    if (this.user == null) {
       this.$router.push({ path: "/login" });
     }
-  },
-  mounted() {
     this.getMovies();
     this.getCategories();
   },

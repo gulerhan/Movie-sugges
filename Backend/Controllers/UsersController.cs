@@ -13,19 +13,12 @@ namespace MovieSugges.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MyDbContext dbContext;
-        //private readonly JwtTokenGenerator _jwtTokenGenerator;
 
-        private readonly List<User> _users = new List<User>
-        {
-            new User { Email = "admin", Password = "admin123", Role = "Admin" },
-            new User { Email = "user", Password = "user123", Role = "User" }
-        };
 
         public UsersController(MyDbContext dbContext, IOptions<JwtSettings> jwtSettings)
         {
             this.dbContext = dbContext;
 
-            //_jwtTokenGenerator = new JwtTokenGenerator(jwtSettings.Value);
         }
 
         [HttpPost]
@@ -41,6 +34,7 @@ namespace MovieSugges.Controllers
             var objUser = dbContext.Users.FirstOrDefault(x => x.Email == userDTO.Email);
             if (objUser == null)
             {
+                var role = dbContext.Roles.FirstOrDefault(x => x.RoleName == "User");
 
                 dbContext.Users.Add(new User
                 {
@@ -48,6 +42,9 @@ namespace MovieSugges.Controllers
                     LastName = userDTO.LastName,
                     Email = userDTO.Email,
                     Password = userDTO.Password,
+                    Role=role
+                   
+
                 });
                 dbContext.SaveChanges();
                 return Ok("User registered successfully");
@@ -62,10 +59,6 @@ namespace MovieSugges.Controllers
         public IActionResult Login(LoginDTO loginDTO)
         {
             var user = dbContext.Users.FirstOrDefault(x => x.Email == loginDTO.Email && x.Password == loginDTO.Password);
-            
-            //var token = _jwtTokenGenerator.GenerateToken(user);
-
-            //user.BearerToken = token;
 
             if (user != null)
             {

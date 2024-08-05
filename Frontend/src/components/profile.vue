@@ -8,14 +8,12 @@
     <thead>
       <tr>
         <th class="text-left">Film Name</th>
-        <th class="text-left">Point</th>
-        <th class="text-left">Comment</th>
+        <th class="text-left">Comments</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in desserts" :key="item.name">
         <td>{{ item.name }}</td>
-        <td>{{ item.point }}</td>
         <td>{{ item.comment }}</td>
       </tr>
     </tbody>
@@ -23,6 +21,7 @@
 </template>
 
 <script>
+// import axios from "axios";
 import HeaderVue from "./page-header.vue";
 
 export default {
@@ -35,62 +34,14 @@ export default {
       user: {
         email: "",
       },
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          point: 7,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Ice cream sandwich",
-          point: 6,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Eclair",
-          point: 9,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Cupcake",
-          point: 5,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Gingerbread",
-          point: 4,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Jelly bean",
-          point: 6,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Lollipop",
-          point: 2,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Honeycomb",
-          point: 7,
-          comment: "asdasdasd",
-        },
-        {
-          name: "Donut",
-          point: 5,
-          comment: "asdasdasd",
-        },
-        {
-          name: "KitKat",
-          point: 1,
-          comment: "asdasdasd",
-        },
-      ],
+      movie: null,
     };
   },
   created() {
     this.fetchUser();
+  },
+  mounted() {
+    // this.movieDetail();
   },
   methods: {
     fetchUser() {
@@ -99,7 +50,18 @@ export default {
         this.user = user;
       }
     },
+
+    // movieDetail() {
+    //   axios
+    //     .get(`http://localhost:7224/api/Movies/GetDetail/${this.movieId}`)
+    //     .then((res) => {
+    //       console.log("Profile Detail", res);
+    //       this.movie = res.data;
+    //     })
+    //     .finally(() => (this.isLoading = false));
+    // },
   },
+
   // mounted() {
   //   this.fetchUser();
   // },

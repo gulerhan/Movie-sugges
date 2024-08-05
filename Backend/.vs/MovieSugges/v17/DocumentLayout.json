@@ -3,52 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.dal\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.dal\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\migrations\\20240711113030_adduserrole.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:migrations\\20240711113030_adduserrole.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\migrations\\20240624111532_initialmigration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:migrations\\20240624111532_initialmigration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\commentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\commentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\moviedetailresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\moviedetailresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\userandrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\userandrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\migrations\\20240801113803_usertorole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:migrations\\20240801113803_usertorole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\migrations\\20240716182210_categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:migrations\\20240716182210_categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\dto\u0027s\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:dto\u0027s\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,29 +86,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20240624111532_initialmigration.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240624111532_initialmigration.Designer.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240624111532_initialmigration.Designer.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240624111532_initialmigration.Designer.cs",
-              "RelativeToolTip": "Migrations\\20240624111532_initialmigration.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAANAAAA",
+              "DocumentIndex": 2,
+              "Title": "MyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.DAL\\MyDbContext.cs",
+              "RelativeDocumentMoniker": "MovieSugges.DAL\\MyDbContext.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.DAL\\MyDbContext.cs",
+              "RelativeToolTip": "MovieSugges.DAL\\MyDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T20:26:14.541Z",
+              "WhenOpened": "2024-08-04T09:57:08.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Category.cs",
+              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\Category.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Category.cs",
+              "RelativeToolTip": "MovieSugges.BL\\Model\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:56:49.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommentResponse.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\CommentResponse.cs",
+              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\CommentResponse.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\CommentResponse.cs",
+              "RelativeToolTip": "MovieSugges.BL\\Model\\CommentResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:44:17.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Movie.cs",
+              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\Movie.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Movie.cs",
+              "RelativeToolTip": "MovieSugges.BL\\Model\\Movie.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:44:08.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "MovieDetailResponse.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\MovieDetailResponse.cs",
+              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\MovieDetailResponse.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\MovieDetailResponse.cs",
+              "RelativeToolTip": "MovieSugges.BL\\Model\\MovieDetailResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:44:06.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Controllers\\CommentController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T09:43:18.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20240801113803_UserToRole.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240801113803_UserToRole.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240801113803_UserToRole.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240801113803_UserToRole.cs",
+              "RelativeToolTip": "Migrations\\20240801113803_UserToRole.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T12:08:00.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20240716182210_Categories.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240716182210_Categories.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240716182210_Categories.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240716182210_Categories.cs",
+              "RelativeToolTip": "Migrations\\20240716182210_Categories.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T12:07:40.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T19:42:03.03Z",
+              "WhenOpened": "2024-08-01T12:07:34.307Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAswCAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T17:45:42.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCkAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T11:21:31.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\DTO\u0027s\\UserDTO.cs",
+              "RelativeDocumentMoniker": "DTO\u0027s\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\DTO\u0027s\\UserDTO.cs",
+              "RelativeToolTip": "DTO\u0027s\\UserDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T11:21:16.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserRole.cs",
+              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\UserRole.cs",
+              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserRole.cs",
+              "RelativeToolTip": "MovieSugges.BL\\Model\\UserRole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T11:20:56.59Z"
             },
             {
               "$type": "Document",
@@ -110,127 +252,9 @@
               "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\User.cs",
               "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\User.cs",
               "RelativeToolTip": "MovieSugges.BL\\Model\\User.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAwBAAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T19:39:39.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserAndRole.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserAndRole.cs",
-              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\UserAndRole.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserAndRole.cs",
-              "RelativeToolTip": "MovieSugges.BL\\Model\\UserAndRole.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T19:05:04.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T17:56:11.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAowEMAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T17:57:42.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAADgvzgAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T17:50:07.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20240711113030_AddUserRole.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240711113030_AddUserRole.Designer.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240711113030_AddUserRole.Designer.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Migrations\\20240711113030_AddUserRole.Designer.cs",
-              "RelativeToolTip": "Migrations\\20240711113030_AddUserRole.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T20:27:23.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.DAL\\MyDbContext.cs",
-              "RelativeDocumentMoniker": "MovieSugges.DAL\\MyDbContext.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.DAL\\MyDbContext.cs",
-              "RelativeToolTip": "MovieSugges.DAL\\MyDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T20:27:29.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\AdminController.cs",
-              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\AdminController.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\AdminController.cs",
-              "RelativeToolTip": "MovieSugges.BL\\Model\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T17:57:20.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "JwtSettings.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\JwtSettings.cs",
-              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\JwtSettings.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\JwtSettings.cs",
-              "RelativeToolTip": "MovieSugges.BL\\Model\\JwtSettings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T18:39:59.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserRole.cs",
-              "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\UserRole.cs",
-              "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserRole.cs",
-              "RelativeToolTip": "MovieSugges.BL\\Model\\UserRole.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T18:17:35.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-01T11:20:52.279Z"
             }
           ]
         }

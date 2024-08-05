@@ -34,6 +34,13 @@ public class MyDbContext : DbContext
             .HasOne(m => m.Category)
             .WithMany(c => c.Movies)
             .HasForeignKey(m => m.CategoryId);
-    }
+
+        modelBuilder.Entity<User>()
+            .HasOne(p => p.Role)
+            .WithMany(p => p.Users)
+            .HasForeignKey(p => p.RoleId)
+            .OnDelete(DeleteBehavior.Restrict);
+            
+       }
 
 }
