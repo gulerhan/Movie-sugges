@@ -6,7 +6,7 @@
     <div>
       <div class="container my-12 mx-auto px-4 md:px-12">
         <div class="d-flex flex-col items-center pt-12">
-          <v-form v-model="valid" class="w-3/4 sm:w-1/4">
+          <v-form v-model="valid" class="w-3/4 sm:w-1/4" ref="form">
             <v-col class="d-flex flex-col items-center mb-10">
               <p class="text-4xl font-sans text-white">Giriş Yap</p>
             </v-col>
@@ -15,17 +15,17 @@
               <v-text-field
                 v-model="email"
                 label="Email"
+                :rules="emailRules"
                 required
-                hide-details="false"
                 class="text-white"
               ></v-text-field>
             </v-col>
             <v-col class="position-relative">
               <v-text-field
                 v-model="password"
+                :rules="passwordRules"
                 label="Şifre"
                 required
-                hide-details="false"
                 class="pt-6 text-white"
                 :type="showPassword ? 'text' : 'password'"
                 @keyup.enter="login"
@@ -89,16 +89,36 @@ export default {
       email: "",
       password: "",
       isShowSnackbar: false,
+      valid: false,
       showPassword: false,
+      emailRules: [
+        (v) =>
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+          "E-mail geçerli olmalı",
+      ],
+      passwordRules: [(v) => !!v || "Şifre gerekli"],
     };
   },
   methods: {
+    resetForm() {
+      this.email = "";
+      this.password = 0;
+      if (this.$refs.form) {
+        this.$refs.form.resetValidation();
+      }
+    },
     login() {
+      if (this.$refs.form && typeof this.$refs.form.validate === "function") {
+        this.$refs.form.validate();
+      } else {
+        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
+      }
+
       if (!this.email || !this.password) {
-        this.isShowSnackbar = true;
         setTimeout(() => {
           this.isShowSnackbar = false;
         }, 1500);
+        this.isShowSnackbar = true;
         return;
       }
       const requestOptions = {

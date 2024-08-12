@@ -10,7 +10,10 @@
             ></v-img>
           </v-card>
           <v-col class="text-xl text-center font-bold">
-            Kategori: <span class="font-normal">{{ movie?.categoryName }}</span>
+            Kategori:
+            <span class="font-normal">{{ movie?.categoryName }}</span>
+            <!-- Yayınlayan:
+            <span class="font-normal">{{ user.name }}</span> -->
           </v-col>
         </v-col>
         <v-col cols="8">

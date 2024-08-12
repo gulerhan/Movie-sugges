@@ -6,25 +6,25 @@
     <div>
       <div class="container my-12 mx-auto px-4 md:px-12">
         <div class="d-flex flex-col items-center">
-          <v-form v-model="valid" class="w-3/4 sm:w-1/4">
-            <v-col class="d-flex flex-col items-center mb-10">
+          <v-form v-model="valid" class="w-3/4 sm:w-1/4" ref="form">
+            <v-col class="d-flex flex-col items-center mb-2">
               <p class="text-4xl font-sans text-white">Kayıt Ol</p>
             </v-col>
             <v-col md="12">
               <v-text-field
                 v-model="name"
+                :rules="nameRules"
                 label="Adı"
                 required
-                hide-details="false"
                 class="text-white"
               ></v-text-field>
             </v-col>
             <v-col md="12">
               <v-text-field
                 v-model="surname"
+                :rules="surnameRules"
                 label="Soyadı"
                 required
-                hide-details="false"
                 class="pt-3 text-white"
                 @keyup.enter="login"
               ></v-text-field>
@@ -32,9 +32,9 @@
             <v-col md="12">
               <v-text-field
                 v-model="email"
+                :rules="emailRules"
                 label="Email"
                 required
-                hide-details="false"
                 class="pt-3 text-white"
                 @keyup.enter="login"
               ></v-text-field>
@@ -42,9 +42,9 @@
             <v-col md="12" class="position-relative">
               <v-text-field
                 v-model="password"
+                :rules="passwordRules"
                 label="Şifre"
                 required
-                hide-details="false"
                 class="pt-3 text-white"
                 :type="showPassword ? 'text' : 'password'"
                 @keyup.enter="register"
@@ -80,18 +80,6 @@
           </div>
         </div>
       </div>
-      <v-snackbar
-        v-model="isShowSnackbar"
-        :color="snackbarColor"
-        elevation="24"
-      >
-        {{ snackbarInfo }}
-        <template v-slot:actions>
-          <v-btn color="white" variant="text" @click="isShowSnackbar = false">
-            Kapat
-          </v-btn>
-        </template>
-      </v-snackbar>
     </div>
   </div>
 </template>
@@ -105,15 +93,43 @@ export default {
       surname: "",
       email: "",
       password: "",
-      snackbarInfo: "Kullanıcı bilgileri boş geçilemez",
+      snackbarInfo: "",
       isShowSnackbar: false,
       snackbarColor: "red",
       showPassword: false,
+      valid: false,
+      nameRules: [(v) => !!v || "Adı gerekli"],
+      surnameRules: [(v) => !!v || "Soyadı gerekli"],
+      emailRules: [
+        (v) =>
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+          "E-mail geçerli olmalı",
+      ],
+      passwordRules: [(v) => !!v || "Şifre gerekli"],
     };
   },
   methods: {
+    resetForm() {
+      this.name = "";
+      this.surname = null;
+      this.email = "";
+      this.password = 0;
+      if (this.$refs.form) {
+        this.$refs.form.resetValidation();
+      }
+    },
     register() {
-      console.log("register");
+      if (this.$refs.form && typeof this.$refs.form.validate === "function") {
+        this.$refs.form.validate();
+      } else {
+        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
+      }
+
+      // if (!this.valid) {
+      //   this.snackbarText = "Lütfen tüm gerekli alanları doldurun.";
+      //   this.snackbar = true;
+      //   return;
+      // }
       if (
         this.name.length == 0 ||
         this.surname.length == 0 ||

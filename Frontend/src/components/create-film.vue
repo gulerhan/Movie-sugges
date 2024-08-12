@@ -1,7 +1,7 @@
 <template>
   <HeaderVue />
   <div>
-    <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="container my-12 mx-auto px-4 md:px-4">
       <!-- <v-row class="d-flex items-center" cols="12">
         <v-col xs="6" sm="3" lg="3">
           <v-autocomplete
@@ -28,55 +28,49 @@
           </v-autocomplete>
         </v-col>
       </v-row> -->
-      <div class="d-flex flex-col items-center">
-        <v-form v-model="valid" class="sm:w-1/4 md:w-1/4">
+      <div class="d-flex flex-col items-center pb-4">
+        <v-form v-model="valid" class="sm:w-1/4 md:w-1/4" ref="form">
           <v-col class="d-flex flex-col items-center mb-10">
             <p class="text-4xl font-sans">Film Ekle</p>
           </v-col>
 
-          <v-col md="12">
+          <v-col>
             <v-text-field
               v-model="name"
-              :rules="name"
+              :rules="nameRules"
               label="Film Adı"
               required
-              hide-details="false"
             ></v-text-field>
           </v-col>
 
           <v-col>
             <v-file-input
-              md="12"
-              class="file-input"
+              :rules="fileRules"
               label="Film Görseli"
-              prepend-icon=""
               type="file"
-              hide-details="false"
+              prepend-icon=""
+              prepend-inner-icon="mdi mdi-attachment"
               @change="onFileSelected"
             ></v-file-input>
           </v-col>
 
-          <v-col md="12">
+          <v-col>
             <v-select
               v-model="category"
               label="Film Kategorisi"
-              hide-details
+              :rules="categoryRules"
               item-title="name"
               item-value="id"
               :items="categories"
             ></v-select>
           </v-col>
 
-          <v-col md="12">
+          <v-col>
             <v-text-field
               v-model="point"
-              :rules="[
-                (v) => !!v || 'Film Puanı gerekli',
-                (v) => (v >= 0 && v <= 9) || 'Puan 0 ile 9 arasında olmalı',
-              ]"
+              :rules="pointRules"
               label="Film Puanı"
               required
-              hide-details="false"
               type="number"
               min="0"
               max="9"
@@ -85,10 +79,11 @@
             ></v-text-field>
           </v-col>
 
-          <v-col md="12">
+          <v-col>
             <v-textarea
               v-model="desc"
               label="Film Açıklaması"
+              :rules="descRules"
               row-height="30"
               rows="4"
               variant="filled"
@@ -106,6 +101,15 @@
         <v-snackbar v-model="snackbar">
           {{ text }}
 
+          <template v-slot:actions>
+            <v-btn color="red" variant="text" @click="snackbar = false">
+              Kapat
+            </v-btn>
+          </template>
+        </v-snackbar>
+
+        <v-snackbar v-model="snackbar">
+          {{ snackbarText }}
           <template v-slot:actions>
             <v-btn color="red" variant="text" @click="snackbar = false">
               Kapat
@@ -140,6 +144,18 @@ export default {
     search: null,
     categories: [],
     selectedFile: null,
+    valid: false,
+    nameRules: [(v) => !!v || "Film adı gerekli"],
+    fileRules: [
+      (v) => !!v || "Film resmi gerekli",
+      (v) => (v && v.length > 0) || "Film resmi gerekli",
+    ],
+    categoryRules: [(v) => !!v || "Film kategorisi gerekli"],
+    pointRules: [
+      (v) => !!v || "Film puanı 0 ile 9 arasında olmalı",
+      (v) => (v >= 0 && v <= 9) || "Puan 0 ile 9 arasında olmalı",
+    ],
+    descRules: [(v) => !!v || "Film açıklaması gerekli"],
   }),
   watch: {
     search(val) {
@@ -165,6 +181,16 @@ export default {
   },
 
   methods: {
+    resetForm() {
+      this.name = "";
+      this.selectedFile = null;
+      this.category = "";
+      this.point = 0;
+      this.desc = "";
+      if (this.$refs.form) {
+        this.$refs.form.resetValidation();
+      }
+    },
     limitInput(event) {
       const value = parseFloat(event.target.value);
       if (value > 9) {
@@ -189,6 +215,21 @@ export default {
     //   }
     // },
     save() {
+      if (this.$refs.form && typeof this.$refs.form.validate === "function") {
+        this.$refs.form.validate();
+      } else {
+        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
+      }
+
+      if (!this.valid) {
+        this.snackbarText = "Lütfen tüm gerekli alanları doldurun.";
+        this.snackbar = true;
+        setTimeout(() => {
+          this.snackbar = false;
+        }, 1500);
+        return;
+      }
+
       const formData = new FormData();
       formData.append("poster", this.selectedFile, this.selectedFile.name);
       formData.append("point", this.point);
@@ -200,9 +241,16 @@ export default {
         .post(`http://localhost:7224/api/Movies/Create`, formData)
         .then((res) => {
           console.log("save film", res);
+          this.snackbarText = "Film başarıyla kaydedildi.";
+          this.snackbar = true;
+          this.resetForm();
+        })
+        .catch((error) => {
+          console.log("save error", error);
+          this.snackbarText = "Film kaydedilirken bir hata oluştu.";
+          this.snackbar = true;
         })
         .finally(() => (this.isLoading = false));
-      this.snackbar = true;
 
       // if (
       //   this.selectedFile.length == 0 ||

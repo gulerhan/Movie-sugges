@@ -16,6 +16,7 @@ import FilmDetail from "./components/film-detail.vue";
 import Profile from "./components/profile.vue";
 
 
+
 const app = createApp(App);
 const vuetify = createVuetify({
   components,
