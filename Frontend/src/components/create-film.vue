@@ -230,12 +230,17 @@ export default {
         return;
       }
 
+      const currentUser = JSON.parse(localStorage.getItem("user"));
+
       const formData = new FormData();
       formData.append("poster", this.selectedFile, this.selectedFile.name);
       formData.append("point", this.point);
       formData.append("title", this.name);
       formData.append("categoryId", this.category);
       formData.append("description", this.desc);
+      formData.append("userId", currentUser.userId);
+
+      console.log("currentUser", currentUser.userId);
 
       axios
         .post(`http://localhost:7224/api/Movies/Create`, formData)

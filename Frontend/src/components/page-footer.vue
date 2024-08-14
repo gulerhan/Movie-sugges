@@ -1,6 +1,6 @@
 <template>
   <v-footer
-    class="d-flex flex-column bottom-0 w-100 position-absolute sm:d-block pt-10"
+    class="d-flex flex-column bottom-0 w-100 sm:d-block position-absolute"
     style="padding: 0; bottom: 0px"
   >
     <div class="bg-yellow-lighten-1 w-100 d-flex justify-center">

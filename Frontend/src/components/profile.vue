@@ -12,16 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in desserts" :key="item.name">
-        <td>{{ item.name }}</td>
-        <td>{{ item.comment }}</td>
+      <tr>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </v-table>
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import HeaderVue from "./page-header.vue";
 
 export default {
@@ -35,13 +35,14 @@ export default {
         email: "",
       },
       movie: null,
+      userId: null,
     };
   },
   created() {
     this.fetchUser();
   },
   mounted() {
-    // this.movieDetail();
+    this.fetchMyMovies();
   },
   methods: {
     fetchUser() {
@@ -49,6 +50,15 @@ export default {
       if (user) {
         this.user = user;
       }
+    },
+
+    fetchMyMovies() {
+      axios
+        .get(`http://localhost:7224/api/Movies/GetMyMovies/${this.user.userId}`)
+        .then((res) => {
+          console.log("GetMyMovies", res);
+        })
+        .finally(() => (this.isLoading = false));
     },
 
     // movieDetail() {

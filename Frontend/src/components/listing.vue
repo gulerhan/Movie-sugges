@@ -122,7 +122,7 @@
         v-if="
           filteredMovies.length > 10 && showedFilmCount < filteredMovies.length
         "
-        class="d-flex flex-row justify-space-around p-20"
+        class="d-flex flex-row justify-space-around p-10"
       >
         <v-btn elevation="2" color="yellow lighten-1" @click="isShowMore()"
           >Devamını göster</v-btn
@@ -219,6 +219,7 @@ export default {
         .get(`http://localhost:7224/api/Category/GetAll`)
         .then((res) => {
           this.categories = res.data;
+          this.categories.unshift({ name: "Kategori seçiniz", id: "" });
           console.log("get categories", toRaw(this.categories));
         })
         .finally(() => (this.isLoading = false));

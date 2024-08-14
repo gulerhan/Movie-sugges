@@ -32,6 +32,7 @@ namespace MovieSugges.Controllers
             movie.Point = movieDTO.Point;
             movie.CategoryId = movieDTO.CategoryId;
             movie.Description = movieDTO.Description;
+            //movie.UserId = movieDTO.UserId;
 
             var resource = Directory.GetCurrentDirectory();
             var extension = Path.GetExtension(movieDTO.Poster.FileName);
@@ -135,5 +136,51 @@ namespace MovieSugges.Controllers
 
             return Ok("Movie deleted successfully");
         }
+
+        [HttpGet]
+        [Route("GetMyMovies/{userId}")]
+        public async Task<IActionResult> GetMyMovies(int userId)
+        {
+            if (userId == null)
+            {
+                return NotFound();
+            }
+            var movies = await dbContext.Movies
+                .Include(m => m.Comments) 
+                .Include(m => m.Category) 
+                //.Where(m => m.UserId == userId)
+                .ToListAsync();
+
+            if (movies == null)
+            {
+                return NotFound();
+
+            }
+
+            var response = new List<MovieDetailResponse>();
+            foreach (var movie in movies)
+            {
+                var detail  = new MovieDetailResponse
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    Description = movie.Description,
+                    Poster = movie.Poster,
+                    CategoryName = movie.Category.Name,
+                    Comments = movie.Comments.Select(c => new CommentResponse
+                    {
+                        Id = c.Id,
+                        Content = c.Content,
+                        UserName = c.User.FirstName + " " + c.User.LastName,
+                    }).ToList()
+                };
+
+                response.Add(detail);
+            }
+
+            return Ok(response);
+        }
+
+
     }
 }
