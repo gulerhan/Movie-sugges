@@ -32,7 +32,7 @@ namespace MovieSugges.Controllers
             movie.Point = movieDTO.Point;
             movie.CategoryId = movieDTO.CategoryId;
             movie.Description = movieDTO.Description;
-            //movie.UserId = movieDTO.UserId;
+            movie.UserId = movieDTO.UserId;
 
             var resource = Directory.GetCurrentDirectory();
             var extension = Path.GetExtension(movieDTO.Poster.FileName);
@@ -147,8 +147,9 @@ namespace MovieSugges.Controllers
             }
             var movies = await dbContext.Movies
                 .Include(m => m.Comments) 
-                .Include(m => m.Category) 
-                //.Where(m => m.UserId == userId)
+                  .ThenInclude(c => c.User)
+                .Include(m => m.Category)
+                .Where(m => m.UserId == userId)
                 .ToListAsync();
 
             if (movies == null)

@@ -15,6 +15,8 @@ namespace MovieSugges.MovieSugges.BL.Model
         public ICollection<Comment> Comments { get; set; }
 
         public int IsActive { get; set; } = 1;
+
+        [ForeignKey("UserRole")]
         public int RoleId { get; set; }
         public UserRole Role { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.Now;

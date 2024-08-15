@@ -106,7 +106,9 @@ export default {
     fetchComments() {
       console.log("movieId", this.movieId);
       axios
-        .get(`http://localhost:7224/api/GetMovieComments/${this.movieId}`)
+        .get(
+          `http://localhost:7224/api/Comment/GetMovieComments/${this.movieId}`
+        )
         .then((res) => {
           console.log("Comments", res);
         })

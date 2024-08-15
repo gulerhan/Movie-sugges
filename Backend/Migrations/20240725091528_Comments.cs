@@ -11,9 +11,6 @@ namespace MovieSugges.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Comment",
-                table: "Movies");
 
             migrationBuilder.CreateTable(
                 name: "Comments",
@@ -38,12 +35,6 @@ namespace MovieSugges.Migrations
             migrationBuilder.DropTable(
                 name: "Comments");
 
-            migrationBuilder.AddColumn<string>(
-                name: "Comment",
-                table: "Movies",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
         }
     }
 }

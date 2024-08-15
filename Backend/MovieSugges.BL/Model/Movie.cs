@@ -9,7 +9,6 @@ namespace MovieSugges.MovieSugges.BL.Model
         public string Title { get; set; }
         public int Point { get; set; }
 
-
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }

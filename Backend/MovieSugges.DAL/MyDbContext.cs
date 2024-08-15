@@ -20,27 +20,34 @@ public class MyDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Comment>()
-            .HasOne(c => c.Movie)
-            .WithMany(m => m.Comments)
-            .HasForeignKey(c => c.MovieId);
-
-        modelBuilder.Entity<Comment>()
-            .HasOne(c => c.User)
-            .WithMany()
-            .HasForeignKey(c => c.UserId);
+        modelBuilder.Entity<Movie>()
+          .HasOne(m => m.User)
+          .WithMany(u => u.Movies)
+          .HasForeignKey(m => m.UserId)
+          .OnDelete(DeleteBehavior.Cascade); // User silindiğinde, ona ait filmler de silinir.
 
         modelBuilder.Entity<Movie>()
             .HasOne(m => m.Category)
             .WithMany(c => c.Movies)
             .HasForeignKey(m => m.CategoryId);
 
+        modelBuilder.Entity<Comment>()
+            .HasOne(c => c.Movie)
+            .WithMany(m => m.Comments)
+            .HasForeignKey(c => c.MovieId)
+            .OnDelete(DeleteBehavior.Cascade); // Movie silindiğinde, ona ait yorumlar da silinir.
+
+        modelBuilder.Entity<Comment>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Comments)
+            .HasForeignKey(c => c.UserId);
+
         modelBuilder.Entity<User>()
-            .HasOne(p => p.Role)
-            .WithMany(p => p.Users)
-            .HasForeignKey(p => p.RoleId)
-            .OnDelete(DeleteBehavior.Restrict);
-            
-       }
+          .HasOne(u => u.Role)
+          .WithMany(r => r.Users)
+          .HasForeignKey(u => u.RoleId)
+          .OnDelete(DeleteBehavior.Restrict);
+
+    }
 
 }
