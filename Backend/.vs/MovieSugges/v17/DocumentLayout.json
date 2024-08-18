@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,10 +23,6 @@
       "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\usercommentsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.bl\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.bl\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|c:\\users\\burha\\onedrive\\masa\u00FCst\u00FC\\movie-sugges\\backend\\moviesugges.dal\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD40E1F0-71D1-4E05-8707-AD1EF8ADFD21}|MovieSugges.csproj|solutionrelative:moviesugges.dal\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Movie.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Movie.cs",
               "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\Movie.cs",
@@ -66,12 +66,11 @@
               "RelativeToolTip": "MovieSugges.BL\\Model\\Movie.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T11:18:33.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T11:18:33.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserCommentsResponse.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\UserCommentsResponse.cs",
               "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\UserCommentsResponse.cs",
@@ -79,25 +78,24 @@
               "RelativeToolTip": "MovieSugges.BL\\Model\\UserCommentsResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T10:51:37.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T10:51:37.807Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Comment.cs",
               "RelativeDocumentMoniker": "MovieSugges.BL\\Model\\Comment.cs",
               "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\MovieSugges.BL\\Model\\Comment.cs",
               "RelativeToolTip": "MovieSugges.BL\\Model\\Comment.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-18T10:49:14.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAAABIAAABvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T10:42:24.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T10:42:24.571Z"
             },
             {
               "$type": "Document",
@@ -118,21 +115,19 @@
               "RelativeToolTip": "MovieSugges.DAL\\MyDbContext.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAwwCoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T10:37:52.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T10:37:52.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CommentController.cs",
               "DocumentMoniker": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CommentController.cs",
               "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
               "ToolTip": "C:\\Users\\burha\\OneDrive\\Masa\u00FCst\u00FC\\Movie-sugges\\Backend\\Controllers\\CommentController.cs",
               "RelativeToolTip": "Controllers\\CommentController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowDMAAAAWAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowDIAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T09:01:10.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-15T09:01:10.395Z"
             }
           ]
         }

@@ -1,8 +1,14 @@
-# imdb-clone
+# movie-sugges
 
-Login için kullanıcı bilgileri:
-admin
-123456
+Admin Login için
+e-mail: admin@gmail.com
+password: admin
+
+User Login için
+e-mail: user@gmail.com
+password: user
+
+!! Projeyi önyüzde çalıştırmak için "cd /Frontend" komutu ile frontend dizinine girmeniz gerekmektir.
 
 ## Project setup
 
