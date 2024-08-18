@@ -8,6 +8,7 @@ namespace MovieSugges.MovieSugges.BL.Model
 
         [ForeignKey("Movie")]
         public int MovieId { get; set; }
+
         public Movie Movie { get; set; }
 
         [ForeignKey("User")]

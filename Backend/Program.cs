@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 //using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace MovieSugges
 {
@@ -14,7 +15,8 @@ namespace MovieSugges
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews()
+                .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<MyDbContext>(e => e.UseSqlServer(builder.Configuration.GetConnectionString("DBCS")));

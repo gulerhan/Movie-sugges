@@ -110,8 +110,6 @@ export default {
     login() {
       if (this.$refs.form && typeof this.$refs.form.validate === "function") {
         this.$refs.form.validate();
-      } else {
-        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
       }
 
       if (!this.email || !this.password) {
@@ -132,7 +130,6 @@ export default {
       fetch(`http://localhost:7224/api/Users/Login`, requestOptions)
         .then((response) => {
           if (!response.ok) {
-            console.log("response", response);
             if (response.status == 404) {
               this.isShowSnackbar = true;
             }
@@ -148,12 +145,8 @@ export default {
             token: res.token,
             isAdmin: res.roleId == 1 ? true : false,
           };
-          console.log("login res", res);
           localStorage.setItem("user", JSON.stringify(user));
           this.$router.push({ path: "/listing" });
-        })
-        .catch((error) => {
-          console.error("Hata oluştu:", error.message);
         });
     },
     register() {

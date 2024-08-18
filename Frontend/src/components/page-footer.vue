@@ -1,6 +1,6 @@
 <template>
   <v-footer
-    class="d-flex flex-column bottom-0 w-100 sm:d-block position-absolute"
+    class="d-flex flex-column bottom-0 w-100 sm:d-block position-relative"
     style="padding: 0; bottom: 0px"
   >
     <div class="bg-yellow-lighten-1 w-100 d-flex justify-center">
@@ -55,11 +55,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* @media (max-width: 600px) {
-  .image-wrapper {
-    width: 100%;
-    height: auto;
-  }
-} */
-</style>
+<style scoped></style>

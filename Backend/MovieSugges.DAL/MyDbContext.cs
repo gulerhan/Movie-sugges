@@ -24,7 +24,7 @@ public class MyDbContext : DbContext
           .HasOne(m => m.User)
           .WithMany(u => u.Movies)
           .HasForeignKey(m => m.UserId)
-          .OnDelete(DeleteBehavior.Cascade); // User silindiğinde, ona ait filmler de silinir.
+          .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Movie>()
             .HasOne(m => m.Category)
@@ -35,7 +35,7 @@ public class MyDbContext : DbContext
             .HasOne(c => c.Movie)
             .WithMany(m => m.Comments)
             .HasForeignKey(c => c.MovieId)
-            .OnDelete(DeleteBehavior.Cascade); // Movie silindiğinde, ona ait yorumlar da silinir.
+            .OnDelete(DeleteBehavior.Cascade); 
 
         modelBuilder.Entity<Comment>()
             .HasOne(c => c.User)

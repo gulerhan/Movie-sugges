@@ -40,6 +40,44 @@ namespace MovieSugges.Controllers
         }
 
         [HttpGet]
+        [Route("GetUserComments/{userId}")]
+        public async Task<IActionResult> GetUserComments(int userId)
+        {
+            if (userId == null)
+            {
+                return NotFound();
+            }
+            var comments = await dbContext.Comments
+                .Include(x => x.User)
+                .Include(c => c.Movie)
+                  .ThenInclude(m => m.Category)
+                .Where(c => c.UserId == userId)
+                .ToListAsync();
+
+            if (comments == null)
+            {
+                return NotFound();
+
+            }
+
+            //var response = new List<UserCommentsResponse>();
+            //foreach (var comment in comments)
+            //{
+            //    var userComment = new UserCommentsResponse
+            //    {
+            //       Movie = comment.Movie,
+            //       Comment = comment,
+            //       User = comment.User
+            //    };
+
+            //    response.Add(userComment);
+            //}
+
+            return Ok(comments);
+        }
+
+
+        [HttpGet]
         [Route("GetMovieComments/{movieid}")]
         public IActionResult GetMovieComments(int movieid)
         {

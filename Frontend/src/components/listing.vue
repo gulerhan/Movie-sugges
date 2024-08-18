@@ -78,13 +78,6 @@
                 >
                   Sil
                 </button>
-                <!-- <button
-                    v-if="isHovering"
-                    @click="update(index)"
-                    class="absolute z-10 bg-yellow-500 rounded-full font-sans absolute p-1 right-10 top-1 text-white text-sm md:text-xs"
-                  >
-                    Güncelle
-                  </button> -->
               </div>
 
               <div
@@ -102,11 +95,6 @@
                 >
                   {{ item.point }}
                 </h1>
-                <!-- <h1
-                    class="text-yellow pt-12 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl"
-                  >
-                    {{ item.category }}
-                  </h1> -->
               </div>
               <img
                 alt="Placeholder"
@@ -134,7 +122,6 @@
 </template>
 
 <script>
-import { toRaw } from "vue";
 import HeaderVue from "./page-header.vue";
 import FooterVue from "./page-footer.vue";
 import axios from "axios";
@@ -170,11 +157,9 @@ export default {
       this.$router.push({ path: `/film-detail/${item.id}` });
     },
     deleteMovie() {
-      console.log("deleteCard deleted", this.deletedFilm);
       axios
         .delete(`http://localhost:7224/api/Movies/${this.deletedFilm.id}`)
-        .then((res) => {
-          console.log("movie deleted res", res);
+        .then(() => {
           this.getMovies();
         })
         .finally(() => (this.isLoading = false));
@@ -198,8 +183,6 @@ export default {
       this.showedFilmCount += 10;
     },
     openDeleteModal(event, item) {
-      console.log("openDeleteModal deleted", item);
-
       this.dialog = true;
       this.deletedFilm = item;
     },
@@ -207,7 +190,6 @@ export default {
       axios
         .get(`http://localhost:7224/api/Movies/GetAll`)
         .then((res) => {
-          console.log("movies res", res);
           this.movies = res.data;
           this.filteredMovies = res.data;
         })
@@ -220,14 +202,12 @@ export default {
         .then((res) => {
           this.categories = res.data;
           this.categories.unshift({ name: "Kategori seçiniz", id: "" });
-          console.log("get categories", toRaw(this.categories));
         })
         .finally(() => (this.isLoading = false));
     },
   },
   mounted() {
     this.user = JSON.parse(localStorage.getItem("user"));
-    console.log("user", this.user);
     if (this.user == null) {
       this.$router.push({ path: "/login" });
     }
@@ -245,13 +225,11 @@ export default {
     selectedCategory() {
       const result = [];
       this.movies.forEach((movie) => {
-        console.log("for movies", movie);
         if (movie.categoryId == this.selectedCategory) {
           result.push(movie);
         }
       });
-      console.log("selectedCategory value", this.selectedCategory);
-      console.log("result", result);
+
       this.filteredMovies = result;
     },
     searchModel: {

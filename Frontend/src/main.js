@@ -31,7 +31,7 @@ const routes = [
   { path: "/login", component: LoginPage },
   { path: "/register", component: RegisterPage },
   { path: "/film-detail", component: FilmDetail },
-  { path: "/film-detail/:id", component: FilmDetail },
+  { name:"FilmDetail", path: "/film-detail/:id", component: FilmDetail },
   { path: "/profile", component: Profile },
   
   { path: "/", component: LoginPage },

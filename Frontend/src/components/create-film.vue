@@ -2,32 +2,6 @@
   <HeaderVue />
   <div>
     <div class="container my-12 mx-auto px-4 md:px-4">
-      <!-- <v-row class="d-flex items-center" cols="12">
-        <v-col xs="6" sm="3" lg="3">
-          <v-autocomplete
-            v-model="model"
-            clearable
-            v-model:search.input="search"
-            :items="films"
-            :loading="isLoading"
-            hide-no-data
-            hide-selected
-            item-title="Title"
-            item-value="API"
-            label=""
-            placeholder="Film ara"
-            return-object
-          >
-            <template v-slot:item="{ props, item }">
-              <v-list-item
-                v-bind="props"
-                :prepend-avatar="item.raw.Poster"
-                :title="item.raw.Title"
-              ></v-list-item>
-            </template>
-          </v-autocomplete>
-        </v-col>
-      </v-row> -->
       <div class="d-flex flex-col items-center pb-4">
         <v-form v-model="valid" class="sm:w-1/4 md:w-1/4" ref="form">
           <v-col class="d-flex flex-col items-center mb-10">
@@ -89,6 +63,7 @@
               variant="filled"
               auto-grow
               shaped
+              @keyup.enter="save"
             ></v-textarea>
           </v-col>
         </v-form>
@@ -164,14 +139,6 @@ export default {
 
       this.isLoading = true;
       this.films = [];
-      // axios
-      //   .get(`http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&s=${val}`)
-      //   .then((res) => {
-      //     res.data.Search.forEach((element) => {
-      //       _this.films.push(element);
-      //     });
-      //   })
-      //   .finally(() => (this.isLoading = false));
     },
     model(val) {
       this.name = val.Title;
@@ -204,21 +171,12 @@ export default {
       }
     },
     onFileSelected(event) {
-      console.log("file event", event);
       this.selectedFile = event.target.files[0];
     },
-    // getFilmsByName() {
-    //   if (this.filmName.length > 2) {
-    //     fetch(
-    //       `http://www.omdbapi.com/?i=tt3896198&apikey=2cfbd7a0&t=${this.filmName}`
-    //     ).then((response) => response.json());
-    //   }
-    // },
+
     save() {
       if (this.$refs.form && typeof this.$refs.form.validate === "function") {
         this.$refs.form.validate();
-      } else {
-        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
       }
 
       if (!this.valid) {
@@ -240,32 +198,18 @@ export default {
       formData.append("description", this.desc);
       formData.append("userId", currentUser.userId);
 
-      console.log("currentUser", currentUser.userId);
-
       axios
         .post(`http://localhost:7224/api/Movies/Create`, formData)
-        .then((res) => {
-          console.log("save film", res);
+        .then(() => {
           this.snackbarText = "Film başarıyla kaydedildi.";
           this.snackbar = true;
           this.resetForm();
         })
-        .catch((error) => {
-          console.log("save error", error);
+        .catch(() => {
           this.snackbarText = "Film kaydedilirken bir hata oluştu.";
           this.snackbar = true;
         })
         .finally(() => (this.isLoading = false));
-
-      // if (
-      //   this.selectedFile.length == 0 ||
-      //   this.point.length == 0 ||
-      //   this.name.length == 0 ||
-      //   this.category.length == 0 ||
-      //   this.desc.length == 0
-      // ) {
-      //   console.log("kaydedilmedi");
-      // }
     },
 
     isNumber(evt) {
@@ -287,7 +231,6 @@ export default {
       .get(`http://localhost:7224/api/Category/GetAll`)
       .then((res) => {
         this.categories = res.data;
-        console.log("get cat", this.categories);
       })
       .finally(() => (this.isLoading = false));
   },

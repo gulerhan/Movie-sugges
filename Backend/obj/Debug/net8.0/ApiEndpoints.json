@@ -52,6 +52,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MovieSugges.Controllers.CommentController",
+    "Method": "GetUserComments",
+    "RelativePath": "api/Comment/GetUserComments/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieSugges.Controllers.MoviesController",
     "Method": "DeleteMovie",
     "RelativePath": "api/Movies/{id}",

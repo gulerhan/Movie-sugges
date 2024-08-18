@@ -121,15 +121,8 @@ export default {
     register() {
       if (this.$refs.form && typeof this.$refs.form.validate === "function") {
         this.$refs.form.validate();
-      } else {
-        console.error("Form referansı veya validate fonksiyonu bulunamadı.");
       }
 
-      // if (!this.valid) {
-      //   this.snackbarText = "Lütfen tüm gerekli alanları doldurun.";
-      //   this.snackbar = true;
-      //   return;
-      // }
       if (
         this.name.length == 0 ||
         this.surname.length == 0 ||
@@ -155,8 +148,7 @@ export default {
       fetch(
         `http://localhost:7224/api/Users/Registration`,
         requestOptions
-      ).then((res) => {
-        console.log("register res", res);
+      ).then(() => {
         this.snackbarInfo = "Kayıt başarılı";
         this.isShowSnackbar = true;
         this.snackbarColor = "green";
@@ -164,16 +156,6 @@ export default {
           this.$router.push({ path: "/login" });
         }, 2000);
       });
-
-      // localStorage.setItem(
-      //   "user",
-      //   JSON.stringify({
-      //     name: this.name,
-      //     surname: this.surname,
-      //     email: this.email,
-      //     password: this.password,
-      //   })
-      // );
     },
     login() {
       this.$router.push({ path: "/login" });

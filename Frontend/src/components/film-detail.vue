@@ -12,8 +12,6 @@
           <v-col class="text-xl text-center font-bold">
             Kategori:
             <span class="font-normal">{{ movie?.categoryName }}</span>
-            <!-- Yayınlayan:
-            <span class="font-normal">{{ user.name }}</span> -->
           </v-col>
         </v-col>
         <v-col cols="8">
@@ -79,7 +77,6 @@ export default {
     isLoading: false,
   }),
   mounted() {
-    console.log(" id", this.$route.params.id);
     this.movieId = this.$route.params.id;
     this.fetchMovieDetail();
     this.fetchComments();
@@ -98,20 +95,16 @@ export default {
       axios
         .get(`http://localhost:7224/api/Movies/GetDetail/${this.movieId}`)
         .then((res) => {
-          console.log("Movie Detail", res);
           this.movie = res.data;
         })
         .finally(() => (this.isLoading = false));
     },
     fetchComments() {
-      console.log("movieId", this.movieId);
       axios
         .get(
           `http://localhost:7224/api/Comment/GetMovieComments/${this.movieId}`
         )
-        .then((res) => {
-          console.log("Comments", res);
-        })
+        .then(() => {})
         .finally(() => (this.isLoading = false));
     },
     addComment() {
@@ -120,15 +113,12 @@ export default {
         userId: this.user.userId,
         movieId: this.movieId,
       };
-      console.log("comment", commentModel);
 
       axios
         .post(`http://localhost:7224/api/Movies/Comment`, commentModel)
-        .then((res) => {
-          console.log("Comment created successfully", res);
+        .then(() => {
           this.fetchMovieDetail();
           this.newCommentContent = "";
-          // this.fetchComments();
         })
         .finally(() => (this.isLoading = false));
     },

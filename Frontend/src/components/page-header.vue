@@ -43,10 +43,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .v-icon:hover {
-  background-color: rgb(184, 184, 184);
-  cursor: pointer;
-  border-radius: 10px;
-} */
-</style>
+<style scoped></style>

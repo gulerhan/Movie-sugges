@@ -1,42 +1,52 @@
 <template>
   <HeaderVue />
   <div class="d-flex flex-column p-8">
-    <h1 class="text-3xl font-bold">{{ capitalizedUserName }}</h1>
-    <h1 class="text-xl">{{ user.email }}</h1>
+    <h1 class="text-xl font-bold">
+      Kullanıcı: <span class="font-normal">{{ capitalizedUserName }}</span>
+    </h1>
+    <h1 class="text-xl font-bold">
+      E-mail: <span class="font-normal">{{ user.email }}</span>
+    </h1>
+  </div>
+  <div class="flex flex-row justify-start p-8 pb-0">
+    <p class="text-xl font-sans">Yorumlarım</p>
   </div>
   <v-table class="p-6">
     <thead>
       <tr>
         <th class="text-left">Poster</th>
-        <th class="text-left">Film Name</th>
-        <th class="text-left">Comments</th>
+        <th class="text-left">Film</th>
+        <th class="text-left">Yorum</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="movie in movies" :key="movie.id">
+      <tr v-for="comment in comments" :key="comment.id">
         <td>
-          <img :src="movie.poster" alt="" class="w-24 h-24 object-cover" />
+          <router-link
+            :to="{ name: 'FilmDetail', params: { id: comment?.movieId } }"
+          >
+            <v-img
+              :src="
+                'http://localhost:7224/Upload/MovieImages/' +
+                comment?.movie?.poster
+              "
+              class="w-24 h-24 object-cover"
+            ></v-img>
+          </router-link>
         </td>
-        <td>{{ movie.title }}</td>
+        <td>{{ comment?.movie?.title }}</td>
         <td>
-          <ul>
-            <li v-for="comment in movie.comments" :key="comment.id">
-              {{ comment.content }} —
-              <b
-                ><i>{{ comment.userName }}</i></b
-              >
-            </li>
-          </ul>
+          {{ comment?.content }}
         </td>
       </tr>
     </tbody>
   </v-table>
   <div
-    v-if="!movies.length"
+    v-if="!comments.length"
     class="flex flex-row align-center justify-center pt-36"
   >
     <p class="text-xl font-sans text-slate-400">
-      Henüz yorum herhangi bir filme yorum yapılmadı
+      Henüz herhangi bir filme yorum yapmadınız
     </p>
   </div>
 </template>
@@ -57,7 +67,7 @@ export default {
         userId: null,
         name: "",
       },
-      movies: [],
+      comments: [],
       isLoading: true,
     };
   },
@@ -84,10 +94,11 @@ export default {
 
     fetchMyMovies() {
       axios
-        .get(`http://localhost:7224/api/Movies/GetMyMovies/${this.user.userId}`)
+        .get(
+          `http://localhost:7224/api/Comment/GetUserComments/${this.user.userId}`
+        )
         .then((res) => {
-          console.log("GetMyMovies", res);
-          this.movies = res.data;
+          this.comments = res.data;
         })
         .finally(() => (this.isLoading = false));
     },
