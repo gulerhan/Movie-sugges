@@ -8,7 +8,7 @@ User Login için
 e-mail: user@gmail.com
 password: user
 
-!! Projeyi önyüzde çalıştırmak için "cd /Frontend" komutu ile frontend dizinine girmeniz gerekmektir.
+!! Projeyi önyüzde çalıştırmak için "cd /Frontend" komutu ile frontend dizinine girmeniz gerekmektedir.
 
 ## Project setup
 
